@@ -1,8 +1,8 @@
 {
-    "Group": "dev.fgonz",
-    "Name": "Another QuickStack mod",
+    "Group": "Francisco",
+    "Name": "Another QuickStack",
     "Version": "1.0",
-    "Description": "Adds /quickstack using native quick stack rules",
+    "Description": "Quick stack items to chests and fill processing benches",
     "Authors": [
         {
             "Name": "Francisco"
