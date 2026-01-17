@@ -17,7 +17,7 @@
 );
 
 Group {
-  Anchor: (Width: 380, Height: 320);
+  Anchor: (Width: 380, Height: 400);
   Background: #141c26(0.98);
   LayoutMode: Top;
   Padding: (Full: 24);
@@ -111,6 +111,48 @@ Group {
 
     TextButton #BtnToggleBackpack {
       Text: "ON";
+      Anchor: (Width: 70, Height: 32);
+      Style: @ToggleOnStyle;
+    }
+  }
+
+  Group { Anchor: (Height: 10); }
+
+  Group {
+    LayoutMode: Left;
+    Anchor: (Height: 40);
+
+    Label {
+      Text: "Check Storage";
+      Anchor: (Width: 140);
+      Style: (FontSize: 14, TextColor: #96a9be, VerticalAlignment: Center);
+    }
+
+    Group { FlexWeight: 1; }
+
+    TextButton #BtnToggleStorage {
+      Text: "ON";
+      Anchor: (Width: 70, Height: 32);
+      Style: @ToggleOnStyle;
+    }
+  }
+
+  Group { Anchor: (Height: 10); }
+
+  Group {
+    LayoutMode: Left;
+    Anchor: (Height: 40);
+
+    Label {
+      Text: "Check Hotbar";
+      Anchor: (Width: 140);
+      Style: (FontSize: 14, TextColor: #96a9be, VerticalAlignment: Center);
+    }
+
+    Group { FlexWeight: 1; }
+
+    TextButton #BtnToggleHotbar {
+      Text: "OFF";
       Anchor: (Width: 70, Height: 32);
       Style: @ToggleOnStyle;
     }

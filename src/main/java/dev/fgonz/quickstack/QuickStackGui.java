@@ -52,11 +52,15 @@ public class QuickStackGui extends InteractiveCustomUIPage<QuickStackGui.GuiData
         
         uiCommandBuilder.set("#LblRadius.Text", String.valueOf(cfg.getSearchRadius()));
         uiCommandBuilder.set("#BtnToggleBackpack.Text", cfg.isCheckBackpack() ? "ON" : "OFF");
+        uiCommandBuilder.set("#BtnToggleStorage.Text", cfg.isCheckStorage() ? "ON" : "OFF");
+        uiCommandBuilder.set("#BtnToggleHotbar.Text", cfg.isCheckHotbar() ? "ON" : "OFF");
         
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BtnQuickStack", EventData.of("Action", "stack"), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BtnRadiusMinus", EventData.of("Action", "radius_dec"), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BtnRadiusPlus", EventData.of("Action", "radius_inc"), false);
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BtnToggleBackpack", EventData.of("Action", "toggle_backpack"), false);
+        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BtnToggleStorage", EventData.of("Action", "toggle_storage"), false);
+        uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#BtnToggleHotbar", EventData.of("Action", "toggle_hotbar"), false);
     }
 
     @Override
@@ -108,6 +112,16 @@ public class QuickStackGui extends InteractiveCustomUIPage<QuickStackGui.GuiData
                 
             case "toggle_backpack":
                 cfg.setCheckBackpack(!cfg.isCheckBackpack());
+                configChanged = true;
+                break;
+                
+            case "toggle_storage":
+                cfg.setCheckStorage(!cfg.isCheckStorage());
+                configChanged = true;
+                break;
+                
+            case "toggle_hotbar":
+                cfg.setCheckHotbar(!cfg.isCheckHotbar());
                 configChanged = true;
                 break;
         }

@@ -134,8 +134,8 @@ public class QuickStackService {
                                 processTransaction(tx, movedItemsSummary);
                             }
                         }
-                        
-                        if (storage != null) {
+
+                        if (config.isCheckStorage() && storage != null) {
                             var tx = storage.quickStackTo(chestContainer);
                             if (tx != null && tx.size() > 0 && tx.succeeded()) {
                                 processTransaction(tx, movedItemsSummary);
